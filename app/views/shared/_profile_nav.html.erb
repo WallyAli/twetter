@@ -1,4 +1,29 @@
 
-<table class="table table-bordered">
-<h4>place profile here</h4>
-</table>
+ <div class="profile">
+  <div class="nav nav-pills nav-stacked text-left">
+   
+      <%= content_tag :strong, current_user.name %></br>
+    
+   
+      <%= content_tag :small, '@'+current_user.username %>
+    	
+   
+      <table class="table table-bordered profile-stat">
+        <tbody>
+          <tr>
+            <td>
+              <%= content_tag :h4, current_user.twets.count %>
+              <%= content_tag :small, 'Twets', :class => "uppercase lighter" %>
+            </td>
+            <td>
+              <%= content_tag :h4, current_user.follows.count %>
+              <%= content_tag :small, 'Following', :class => "uppercase lighter" %>
+            </td>
+            <td>
+              <%= content_tag :h4, Follow.where(:following_id => current_user.id).count %>
+              <%= content_tag :small, 'Followers', :class => "uppercase lighter" %>
+            </td>
+        </tbody>
+      </table>
+  </div>
+</div>
