@@ -1,10 +1,11 @@
+
 <div class="col-md-4">
   <ul class="nav nav-pills nav-stacked well text-left">
     <li>
       <%= content_tag :strong, current_user.name %>
     </li>
     <li>
-      <%= content_tag :small, '@'+current_user.username %>
+      <%= link_to "@ #{current_user.username}", current_user.username %>
     </li>
     <li>
       <table class="table table-bordered stats">
@@ -46,3 +47,4 @@
     <%= nav_item("Twet", twets_path) %>
   </ul>
 </div>
+

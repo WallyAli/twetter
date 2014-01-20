@@ -183,14 +183,16 @@ table.stats td:first-child {
 .profile{
   float: right; 
   position: relative;
-  padding-top: 10px;
-  width: 575px;
+  padding-top: 5px;
+  width: 560px;
   height: 280px;
   background-color: #444;
   padding:0;
   text-align: center;
   border-radius: 6px;
   color: white;
+  margin-top: 50px;
+  right:0px;
 
 }
 
@@ -204,3 +206,4 @@ table.stats td:first-child {
   
 
 }
+
