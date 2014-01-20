@@ -179,3 +179,28 @@ table.stats small {
 table.stats td:first-child {
   padding-left: 18px;
 }
+
+.profile{
+  float: right; 
+  position: relative;
+  padding-top: 10px;
+  width: 575px;
+  height: 280px;
+  background-color: #444;
+  padding:0;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+
+}
+
+.profile-stat{
+  width: 258px;
+  margin: 14px 20px;
+  background-color: white;
+  color: black;
+  margin-bottom: 5px;
+  position: relative;
+  
+
+}
