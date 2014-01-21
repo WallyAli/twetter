@@ -6,7 +6,7 @@
   <div class="panel panel-default col-md-8 text-left">
     <div class="pull-left">
       <h4>Who to follow</h4>
-      <p class="text-muted">Twetter accounts in alpabetical order.</p>
+      <p>Twetter accounts in alpabetical order.</p>
     </div>
     <div class="clearfix"></div>
     <hr />
@@ -14,7 +14,7 @@
       <% @users.each do |user| -%>
       <li>
         <%= content_tag :strong, user.name, :class => 'pull-left text-middle' %>
-        <%= link_to "@ #{user.username}", user.username %>
+        <a href="<%= user.username %>"><%= content_tag :span, "@"+user.username, :class => 'text-blue pad-10 text-middle' %></a>
         <%= follow_link(user) %>
         <div class="clearfix"></div>
       </li>
