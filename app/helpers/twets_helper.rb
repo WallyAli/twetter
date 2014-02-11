@@ -7,7 +7,7 @@ module TwetsHelper
 				link_to "@#{match}", match
 			end
 		end
-		"#{modified_twet.join(' ')}"
+		"#{modified_twet.join('')}"
 	end
 end
 
