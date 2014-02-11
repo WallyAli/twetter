@@ -1,7 +1,11 @@
 class RetwetsController < ApplicationController
 	def create
-		@retwet = Retwet.new(retwet_params)
-		
+		@retwet = current_user.retwets.create(retwet_params)
+		if @retwet.valid? && @retwet.persisted?
+			flash[:success] = "retweted successfully"
+		else
+			flas[:error] = "retwet not successfull"
+		end
 	end
 
 	private
