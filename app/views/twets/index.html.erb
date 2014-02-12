@@ -22,18 +22,35 @@
         <%= twet.content %>
 
         <div class="clearfix">
-          <%= content_tag :div, :class => 'pull-right' do %>
-          <%= form_for :retwet, 
-              html = {url: retwets_path, method: 'POST', role: 'form' } do |f| %>
-                <%= hidden_field_tag :return_to, request.original_url %>
-                <%= f.hidden_field :twet_id, :value => twet.id.to_s %>
-                <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
-                <%= f.submit "Retwet".html_safe, :class => 'btn btn-link smaller' %>
+            <%= content_tag :div, :class => 'pull-right' do %>
+                <% if not_my_twet(twet) %>
+                    <%= form_for :retwet, 
+                          html = {url: retwets_path, method: 'POST', role: 'form' } do |f| %>
+                              <%= hidden_field_tag :return_to, request.original_url %>
+                              <%= f.hidden_field :twet_id, :value => twet.id %>
+                              <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
+                              <%= f.submit "retwet", :class => 'btn btn-link smaller' %>
+                    <% end %>
                 <% end %>
             <% end %>
+        <div class="clearfix"></div>
 
-       <div class="clearfix"></div>
+        <!--
+        <div class="clearfix">
+            <%= content_tag :div, :class => 'pull-right' do %>
+                <% if my_twet(twet) %>
+                    <%= form_for :retwet, 
+                          html = {url: retwets_path, method: 'DELETE', role: 'form' } do |f| %>
+                              <%= hidden_field_tag :return_to, request.original_url %>
+                              <%= f.hidden_field :twet_id, :value => twet.id %>
+                              <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
+                              <%= f.submit "retwet", :class => 'btn btn-link smaller' %>
+                    <% end %>
+                <% end %>
+            <% end %>
+          -->
 
+         <div class="clearfix"></div>   
 
       </li>
       <li><hr></li>

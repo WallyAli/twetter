@@ -12,6 +12,11 @@ class RetwetsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@retwet = current_user.retwets.find(params[:retwets])
+		@retwet.destroy
+	end
+
 	def review_params
 		params.require(:retwet).permit(:tweet_id)
 	end
