@@ -20,6 +20,21 @@
         <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
         <div class="clearfix"></div>
         <%= twet.content %>
+
+        <div class="clearfix">
+          <%= content_tag :div, :class => 'pull-right' do %>
+          <%= form_for :retwet, 
+              html = {url: retwets_path, method: 'POST', role: 'form' } do |f| %>
+                <%= hidden_field_tag :return_to, request.original_url %>
+                <%= f.hidden_field :twet_id, :value => twet.id.to_s %>
+                <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
+                <%= f.submit "Retwet".html_safe, :class => 'btn btn-link smaller' %>
+                <% end %>
+            <% end %>
+
+       <div class="clearfix"></div>
+
+
       </li>
       <li><hr></li>
       <% end -%>
