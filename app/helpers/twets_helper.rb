@@ -1,4 +1,5 @@
 module TwetsHelper
+<<<<<<< HEAD
 	def create_link(twet)
 		modified_twet = twet.content.split('')
 		modified_twet.each do |twet|
@@ -13,3 +14,7 @@ end
 
 
 
+=======
+
+end
+>>>>>>> myretwet
