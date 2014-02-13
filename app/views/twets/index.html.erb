@@ -16,10 +16,12 @@
     <ol class="list-unstyled">
       <% @twets.each do |twet| -%>
       <li>
-        <%= link_to "@ #{twet.user.username}", twet.user.username %>
+        <%= link_to "@#{twet.user.username}", twet.user.username %>
         <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => ' pull-right' %>
 
         <div class="clearfix"></div>
+
+        <%= create_link(twet) %>
 
           <%= content_tag :p, twet.content.gsub(/@(?<username>(\w+))/, '<a href="'+'\k<username>'+'">@\k<username></a>').html_safe %>
 
