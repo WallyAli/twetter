@@ -40,6 +40,12 @@ class TwetsController < ApplicationController
     end
   end
 
+  def destroy
+      @twet = Twet.find(params[:id])
+      @twet.destroy
+      redirect_to twets_path, alert: "twet successfully deleted"
+  end
+
   private
 
   # Sets the @twets instance variable to all twets viewable by the current user

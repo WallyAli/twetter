@@ -1,13 +1,9 @@
 class RetwetsController < ApplicationController
-
+	
 	def create
 		@retwet = current_user.retwets.create(retwet_params)
-		if @retwet.valid? && @retwet.persisted?
-			flash[:success] = "retweted successfully"
-			redirect_to profile_path
-		else
-			flash[:error] = "retwet not successfull"
-		end
+		flash[:success] = "retweted successfully"
+		redirect_to retwets_path
 	end
 
 	private
