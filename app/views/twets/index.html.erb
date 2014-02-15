@@ -21,7 +21,7 @@
 
         <div class="clearfix"></div>
 
-        <%= create_link(twet) %>
+
 
           <%= content_tag :p, twet.content.gsub(/@(?<username>(\w+))/, '<a href="'+'\k<username>'+'">@\k<username></a>').html_safe %>
 
@@ -32,31 +32,16 @@
         <div class="clearfix">
             <%= content_tag :div, :class => 'pull-right' do %>
                 <% if not_my_twet(twet) %>
-                    <%= form_for :retwet, 
-                          html = {url: retwets_path, method: 'POST', role: 'form' } do |f| %>
-                              <%= hidden_field_tag :return_to, request.original_url %>
-                              <%= f.hidden_field :twet_id, :value => twet.id %>
-                              <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
-                                <%= f.submit "retwet".html_safe, :class => 'btn btn-link smaller' %> 
+                    <%= form_for :retwet, html = {url: retwets_path, method: 'POST', role: 'form' } do |f| %>
+
+
+                        <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
+                          <%= f.submit "retwet".html_safe, :class => 'btn btn-link smaller' %> 
                     <% end %>
                 <% end %>
             <% end %>
         <div class="clearfix"></div>
 
-        <!--
-        <div class="clearfix">
-            <%= content_tag :div, :class => 'pull-right' do %>
-                <% if my_twet(twet) %>
-                    <%= form_for :retwet, 
-                          html = {url: retwets_path, method: 'DELETE', role: 'form' } do |f| %>
-                              <%= hidden_field_tag :return_to, request.original_url %>
-                              <%= f.hidden_field :twet_id, :value => twet.id %>
-                              <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
-                              <%= f.submit "retwet", :class => 'btn btn-link smaller' %>
-                    <% end %>
-                <% end %>
-            <% end %>
-          -->
 
          <div class="clearfix"></div>   
 

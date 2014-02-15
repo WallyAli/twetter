@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140211065728) do
-=======
-ActiveRecord::Schema.define(version: 20140211235444) do
->>>>>>> myretwet
+ActiveRecord::Schema.define(version: 20140215194031) do
 
   create_table "follows", force: true do |t|
     t.integer  "user_id"
@@ -33,16 +29,13 @@ ActiveRecord::Schema.define(version: 20140211235444) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
   create_table "retwets", force: true do |t|
-    t.integer  "tweet_id"
+    t.integer  "twet_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
->>>>>>> myretwet
   create_table "twets", force: true do |t|
     t.integer  "user_id"
     t.string   "content"
