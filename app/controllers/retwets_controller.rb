@@ -3,7 +3,7 @@ class RetwetsController < ApplicationController
 	def create
 		@retwet = current_user.retwets.create(retwet_params)
 		flash[:success] = "retweted successfully"
-		redirect_to profile_path
+		redirect_to twets_path
 	end
 
 	def destroy

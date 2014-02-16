@@ -32,11 +32,11 @@
         <div class="clearfix">
             <%= content_tag :div, :class => 'pull-right' do %>
                 <% if not_my_twet(twet) %>
-                    <%= form_for :retwet, html = {url: retwets_path, method: 'POST', role: 'form' } do |f| %>
+                    <%= form_for @retwet do |f| %>
+                    
+                      <%= f.hidden_field :twet_id, :value => twet.id %>
+                      <%= f.submit "retwet",  :class => 'btn btn-link smaller' %> 
 
-
-                        <span class="glyphicon glyphicon-retweet smaller text-primary"></span>
-                          <%= f.submit "retwet".html_safe, :class => 'btn btn-link smaller' %> 
                     <% end %>
                 <% end %>
             <% end %>

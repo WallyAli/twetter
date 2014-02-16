@@ -50,6 +50,7 @@ class TwetsController < ApplicationController
 
   # Sets the @twets instance variable to all twets viewable by the current user
   def get_twets
+    @retwet = Retwet.new
     @twets = current_user.all_twets
     if params[:username]
       @user = User.where(username: params[:username]).first
