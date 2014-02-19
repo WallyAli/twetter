@@ -31,7 +31,7 @@
 
         <div class="clearfix">
             <%= content_tag :div, :class => 'pull-right' do %>
-                <% if not_my_twet(twet) %>
+                <% if !(my_twet(twet)) %>
                     <%= form_for @retwet do |f| %>
                     
                       <%= f.hidden_field :twet_id, :value => twet.id %>

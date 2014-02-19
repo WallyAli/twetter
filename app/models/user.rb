@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :follows
   has_many :twets
   has_many :retwets
-
+  has_many :twets, through: :retwets
   validates :name, :presence => true
   validates :username, :presence => true, :uniqueness => true
 
